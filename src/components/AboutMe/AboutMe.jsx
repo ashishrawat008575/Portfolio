@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "../../assets/ProfileImg/Img.png";
+import Image from "../../assets/ProfileImg/Img2.png";
 import BgImage from "../../assets/ProfileImg/AboutBgImg.jpg";
 
 // Animation variant for word-by-word effect
