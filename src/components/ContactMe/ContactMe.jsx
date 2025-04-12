@@ -1,74 +1,144 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {
+  FaLinkedin,
+  FaFacebookF,
+  FaInstagram,
+  FaWhatsapp,
+  FaTelegramPlane,
+} from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import img from "../../assets/ProfileImg/Img.png";
+import { Typewriter } from 'react-simple-typewriter';
+import toast, { Toaster } from 'react-hot-toast';
 
-const ContactMe = () => {
+const ContactSection = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) {
+      toast.error("Please fill in all fields!");
+      return;
+    }
+    toast.success("Message sent successfully! 🚀");
+    setFormData({ name: '', email: '', message: '' });
+  };
+
   return (
-    <div className="bg-[#111] text-white min-h-screen py-16 px-6 flex flex-col items-center justify-center">
-      <motion.h2
-        className="text-4xl font-bold text-yellow-400 mb-2 text-center"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        Contact Me
-      </motion.h2>
-      <motion.p
-        className="text-gray-300 text-lg mb-12 text-center max-w-2xl"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-      >
-        If you have any questions or would like to work together, feel free to reach out!
-      </motion.p>
-
-      <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-5xl gap-10">
-        {/* Image Section */}
+    <section className="bg-[#0e1124] text-white py-16 px-6 md:px-20">
+      <Toaster />
+      <div className="flex flex-col md:flex-row justify-between gap-16">
+        {/* Left - Contact Info */}
         <motion.div
-          className="flex-shrink-0"
+          className="md:w-1/2 space-y-10"
           initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <img
-            src={img}
-            alt="Profile"
-            className=" w-74 h-94 object-cover shadow-lg border-4 border-blue-400"
-          />
+          <h2 className="text-3xl md:text-5xl font-extrabold leading-tight bg-gradient-to-r from-pink-500 via-purple-400 to-blue-400 text-transparent bg-clip-text">
+            <Typewriter
+              words={['DO YOU HAVE A PROJECT TO DISCUSS?']}
+              loop={1}
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </h2>
+
+          <p className="text-xl font-medium flex items-center gap-2">
+            GET IN TOUCH <span className="text-2xl">💬</span>
+          </p>
+
+          <div>
+            <h4 className="text-sm font-semibold mb-1 tracking-wide">CONTACT</h4>
+            <a
+              href="mailto:ashishrwat008575@gmail.com"
+              className="text-blue-400 hover:underline transition duration-200 break-all"
+            >
+              ashishrwat008575@gmail.com
+            </a>
+          </div>
+
+          <div className="flex flex-wrap gap-6 text-3xl">
+            <a href="#" target="_blank" className="text-[#0077B5] hover:scale-110 transition duration-300" rel="noreferrer">
+              <FaLinkedin />
+            </a>
+            <a href="#" target="_blank" className="text-[#4267B2] hover:scale-110 transition duration-300" rel="noreferrer">
+              <FaFacebookF />
+            </a>
+            <a href="#" target="_blank" className="text-[#E1306C] hover:scale-110 transition duration-300" rel="noreferrer">
+              <FaInstagram />
+            </a>
+            <a href="#" target="_blank" className="text-[#25D366] hover:scale-110 transition duration-300" rel="noreferrer">
+              <FaWhatsapp />
+            </a>
+            <a href="#" target="_blank" className="text-[#0088cc] hover:scale-110 transition duration-300" rel="noreferrer">
+              <FaTelegramPlane />
+            </a>
+          </div>
         </motion.div>
 
-        {/* Form Section */}
+        {/* Right - Contact Form */}
         <motion.form
-          className="flex flex-col w-full max-w-lg space-y-5"
+          onSubmit={handleSubmit}
+          className="md:w-1/2 space-y-6 backdrop-blur-md bg-white/5 p-8 rounded-2xl border border-white/10 shadow-lg w-full"
           initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
         >
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="bg-gray-800 p-4 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400 transition"
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="bg-gray-800 p-4 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400 transition"
-          />
-          <textarea
-            placeholder="Your Message"
-            rows="5"
-            className="bg-gray-800 p-4 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400 transition resize-none"
-          ></textarea>
+          <div className="transition-transform duration-300 hover:scale-105">
+            <label className="block mb-1 text-sm">Name</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Enter your name"
+              className="w-full bg-transparent border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-pink-500"
+            />
+          </div>
+
+          <div className="transition-transform duration-300 hover:scale-105">
+            <label className="block mb-1 text-sm">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Enter your email"
+              className="w-full bg-transparent border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-400"
+            />
+          </div>
+
+          <div className="transition-transform duration-300 hover:scale-105">
+            <label className="block mb-1 text-sm">Message</label>
+            <textarea
+              rows="4"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Type your message..."
+              className="w-full bg-transparent border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500"
+            />
+          </div>
+
           <button
             type="submit"
-            className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold py-3 rounded-lg hover:scale-105 transition-transform"
+            className="px-8 py-3 rounded-full text-white font-bold bg-gradient-to-r from-cyan-500 to-pink-500 hover:from-pink-500 hover:to-cyan-500 shadow-xl transform hover:scale-105 transition-all duration-300"
           >
-            Send Message
+            SEND
           </button>
         </motion.form>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default ContactMe;
+export default ContactSection;
