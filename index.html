@@ -4,17 +4,34 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/src/assets/ProfileImg/Profile.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title> <!-- Leave blank, we'll set it with JS -->
+    <title></title>
+
     <script>
       const fullTitle = "Ashish_Portfolio";
       let index = 0;
+      let isDeleting = false;
 
       function typeTitle() {
-        if (index <= fullTitle.length) {
-          document.title = fullTitle.slice(0, index);
-          index++;
-          setTimeout(typeTitle, 150); // typing speed
+        let currentTitle = fullTitle.slice(0, index);
+        document.title = currentTitle;
+
+        if (!isDeleting) {
+          if (index < fullTitle.length) {
+            index++;
+          } else {
+            isDeleting = true;
+            setTimeout(typeTitle, 1000); // pause after typing
+            return;
+          }
+        } else {
+          if (index > 0) {
+            index--;
+          } else {
+            isDeleting = false;
+          }
         }
+
+        setTimeout(typeTitle, isDeleting ? 100 : 150);
       }
 
       window.addEventListener("DOMContentLoaded", typeTitle);
