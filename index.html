@@ -4,7 +4,21 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/src/assets/ProfileImg/Profile.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ashish_Portfolio</title>
+    <title></title> <!-- Leave blank, we'll set it with JS -->
+    <script>
+      const fullTitle = "Ashish_Portfolio";
+      let index = 0;
+
+      function typeTitle() {
+        if (index <= fullTitle.length) {
+          document.title = fullTitle.slice(0, index);
+          index++;
+          setTimeout(typeTitle, 150); // typing speed
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", typeTitle);
+    </script>
   </head>
   <body>
     <div id="root"></div>
