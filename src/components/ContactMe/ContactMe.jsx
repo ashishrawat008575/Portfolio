@@ -9,6 +9,7 @@ import {
 import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
 import toast, { Toaster } from 'react-hot-toast';
+import emailjs from 'emailjs-com';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -19,19 +20,33 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("Please fill in all fields!");
       return;
     }
-    toast.success("Message sent successfully! 🚀");
-    setFormData({ name: '', email: '', message: '' });
+
+    
+    emailjs.send(
+      'service_4cedc8h', 
+      'template_94e3z26',  
+      formData,            
+      '4Z4LsmvrQc6RE4Gnt'       
+    )
+    .then((response) => {
+      toast.success("Thankyou Message sent successfully! 🚀");
+      setFormData({ name: '', email: '', message: '' });
+    })
+    .catch((error) => {
+      toast.error("Failed to send message. Please try again later.");
+    });
   };
 
   return (
     <section className="bg-[#0e1124] text-white py-16 px-6 md:px-20">
       <Toaster />
       <div className="flex flex-col md:flex-row justify-between gap-16">
-        {/* Left - Contact Info */}
+        
         <motion.div
           className="md:w-1/2 space-y-10"
           initial={{ opacity: 0, x: -40 }}
@@ -66,25 +81,25 @@ const ContactSection = () => {
           </div>
 
           <div className="flex flex-wrap gap-6 text-3xl">
-            <a href="#" target="_blank" className="text-[#0077B5] hover:scale-110 transition duration-300" rel="noreferrer">
+            <a href="https://www.linkedin.com/in/ashish-singh-430862202/" target="_blank" className="text-[#0077B5] hover:scale-110 transition duration-300" rel="noreferrer">
               <FaLinkedin />
             </a>
-            <a href="#" target="_blank" className="text-[#4267B2] hover:scale-110 transition duration-300" rel="noreferrer">
+            <a href="https://www.facebook.com/" target="_blank" className="text-[#4267B2] hover:scale-110 transition duration-300" rel="noreferrer">
               <FaFacebookF />
             </a>
-            <a href="#" target="_blank" className="text-[#E1306C] hover:scale-110 transition duration-300" rel="noreferrer">
+            <a href="https://www.instagram.com/" target="_blank" className="text-[#E1306C] hover:scale-110 transition duration-300" rel="noreferrer">
               <FaInstagram />
             </a>
-            <a href="#" target="_blank" className="text-[#25D366] hover:scale-110 transition duration-300" rel="noreferrer">
+            <a href="https://www.whatsapp.com/" target="_blank" className="text-[#25D366] hover:scale-110 transition duration-300" rel="noreferrer">
               <FaWhatsapp />
             </a>
-            <a href="#" target="_blank" className="text-[#0088cc] hover:scale-110 transition duration-300" rel="noreferrer">
+            <a href="https://www.telegram.com/" target="_blank" className="text-[#0088cc] hover:scale-110 transition duration-300" rel="noreferrer">
               <FaTelegramPlane />
             </a>
           </div>
         </motion.div>
 
-        {/* Right - Contact Form */}
+        
         <motion.form
           onSubmit={handleSubmit}
           className="md:w-1/2 space-y-6 backdrop-blur-md bg-white/5 p-8 rounded-2xl border border-white/10 shadow-lg w-full"

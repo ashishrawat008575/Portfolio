@@ -104,11 +104,11 @@ const Hero = () => {
             variants={textVariants}
             className="flex justify-center lg:justify-start gap-5 mt-10"
           >
-            <a href="#" className="text-green-400 hover:scale-125 transition text-2xl"><FaWhatsapp /></a>
-            <a href="#" className="text-white hover:scale-125 transition text-2xl"><FaGithub /></a>
-            <a href="#" className="text-blue-500 hover:scale-125 transition text-2xl"><FaLinkedin /></a>
-            <a href="#" className="text-sky-400 hover:scale-125 transition text-2xl"><FaTwitter /></a>
-            <a href="#" className="text-pink-500 hover:scale-125 transition text-2xl"><FaInstagram /></a>
+            <a href="https://www.whatsapp.com/" className="text-green-400 hover:scale-125 transition text-2xl"><FaWhatsapp /></a>
+            <a href="https://www.github.com/" className="text-white hover:scale-125 transition text-2xl"><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/ashish-singh-430862202/" className="text-blue-500 hover:scale-125 transition text-2xl"><FaLinkedin /></a>
+            <a href="https://www.facebook.com/" className="text-sky-400 hover:scale-125 transition text-2xl"><FaTwitter /></a>
+            <a href="https://www.instagram.com/" className="text-pink-500 hover:scale-125 transition text-2xl"><FaInstagram /></a>
           </motion.div>
         </div>
 

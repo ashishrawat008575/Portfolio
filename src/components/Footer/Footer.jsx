@@ -15,7 +15,7 @@ const Footer = () => {
           <FaGithub />
         </a>
         <a
-          href="https://www.linkedin.com/in/ashishrawat" // Replace with your LinkedIn URL
+          href="https://www.linkedin.com/in/ashish-singh-430862202/" // Replace with your LinkedIn URL
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-2xl"
