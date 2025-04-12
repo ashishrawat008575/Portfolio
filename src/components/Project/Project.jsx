@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaExternalLinkAlt } from 'react-icons/fa';
-import Img from '../../assets/ProfileImg/Profile.png'; // You can replace with project-specific images
+import Img from '../../assets/ProfileImg/Profile.png'; 
 
 // Project Data
 const projects = [
