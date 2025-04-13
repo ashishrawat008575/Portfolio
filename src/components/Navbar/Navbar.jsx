@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { NavLink } from 'react-router-dom'; // Assuming React Router
+import { NavLink } from 'react-router-dom';
 import {
   FaUser,
   FaCode,
@@ -27,7 +27,7 @@ const Navbar = () => {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="hidden sm:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/1 text-white px-6 lg:px-16 py-3 lg:py-5 justify-between items-center shadow-lg max-w-screen-2xl mx-auto"
+        className="hidden sm:flex fixed top-0 left-0 right-0 z-50 text-white px-6 lg:px-16 py-3 lg:py-5 justify-between items-center shadow-lg max-w-screen-2xl mx-auto bg-white/10 backdrop-blur-md rounded-b-xl"
       >
         {/* Logo */}
         <div className="text-white font-extrabold text-xl md:text-2xl tracking-wide drop-shadow-md">
@@ -82,7 +82,7 @@ const Navbar = () => {
       </motion.nav>
 
       {/* Mobile Navbar */}
-      <div className="sm:hidden fixed bottom-1 left-4 right-4 z-50 bg-[#1f2937] rounded-3xl px-4 py-2 flex justify-around items-center shadow-2xl max-w-md mx-auto">
+      <div className="sm:hidden fixed bottom-1 left-4 right-4 z-50 bg-white/10 backdrop-blur-md rounded-3xl px-4 py-2 flex justify-around items-center shadow-2xl max-w-md mx-auto">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = active === item.id;

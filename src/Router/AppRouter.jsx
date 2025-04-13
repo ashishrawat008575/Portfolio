@@ -7,6 +7,7 @@ import ContactMePage from "../Page/ContactMePage";
 import ProjectPage from "../Page/ProjectPage";
 import SkillPage from "../Page/SkillPage";
 import Footer from "../components/Footer/Footer";
+import WebDevChatbot from "../components/Chatbot/Chatbot";
 
 const AppRouter = () => {
   return (
@@ -19,6 +20,7 @@ const AppRouter = () => {
         <Route path="/projects" element={<ProjectPage />} />
         <Route path="/skills" element={<SkillPage />} />
       </Routes>
+      <WebDevChatbot/>
       <Footer />
     </>
   );
