@@ -83,7 +83,7 @@ const Hero = () => {
             variants={textVariants}
             className='mt-8'
           >
-            <Link to='contact' smooth={true} duration={500}>
+            <a href="#contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -91,8 +91,9 @@ const Hero = () => {
               >
                 Hire Me
               </motion.button>
-            </Link>
+            </a>
           </motion.div>
+
 
           {/* Social Links */}
           <motion.div
