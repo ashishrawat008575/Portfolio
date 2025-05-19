@@ -71,9 +71,9 @@ const ContactSection = () => {
           </p>
 
           <div>
-            <h4 className='text-sm font-semibold mb-1 tracking-wide'>
+            <h2 className='text-sm font-semibold mb-1 tracking-wide'>
               CONTACT
-            </h4>
+            </h2>
             <a
               href='mailto:ashishrwat008575@gmail.com'
               className='text-blue-400 hover:underline transition duration-200 break-all'
