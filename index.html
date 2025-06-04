@@ -1,66 +1,69 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-    <title>Ashish | Frontend Developer Portfolio</title>
-    <meta name="description"
-      content="Explore the professional portfolio of Ashish, a frontend developer skilled in React, JavaScript, HTML, and CSS.">
-    <meta name="keywords"
-      content="Frontend Developer, Web Developer, React Developer, HTML, CSS, JavaScript, Portfolio, Chandigarh, Ashish Developer">
-    <meta name="author" content="Ashish">
-  
-  
-    <link rel="icon" type="image/png" href="/src/assets/ProfileImg/Profile.png" />
-  
-    <meta property="og:title" content="Ashish | Frontend Developer Portfolio" />
-    <meta property="og:description" content="Skilled frontend developer showcasing projects, skills, and experience." />
-    <meta property="og:image" content="https://yourdomain.com/preview-image.jpg" />
-    <meta property="og:url" content="https://yourdomain.com" />
-    <meta property="og:type" content="website" />
-  
-    
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ashish | Frontend Developer" />
-    <meta name="twitter:description"
-      content="Explore Ashish's web development portfolio showcasing React and JavaScript projects." />
-    <meta name="twitter:image" content="https://yourdomain.com/twitter-image.jpg"/>
 
-    <script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ashish | Frontend Developer Portfolio</title>
+  <meta name="description"
+    content="Explore the professional portfolio of Ashish, a frontend developer skilled in React, JavaScript, HTML, and CSS.">
+  <meta name="keywords"
+    content="Frontend Developer, Web Developer, React Developer, HTML, CSS, JavaScript, Portfolio, Chandigarh, Ashish Developer">
+  <meta name="author" content="Ashish">
+
+
+  <link rel="icon" type="image/png" href="/src/assets/ProfileImg/Profile.png" />
+
+  <meta property="og:title" content="Ashish | Frontend Developer Portfolio" />
+  <meta property="og:description" content="Skilled frontend developer showcasing projects, skills, and experience." />
+  <meta property="og:image" content="https://rawat-portfolio.vercel.app/preview-image.jpg" />
+  <meta property="og:url" content="https://rawat-portfolio.vercel.app" />
+  <meta property="og:type" content="website" />
+
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ashish | Frontend Developer" />
+  <meta name="twitter:description"
+    content="Explore Ashish's web development portfolio showcasing React and JavaScript projects." />
+  <meta name="twitter:image" content="https://rawat-portfolio.vercel.app/twitter-preview.png" />
+
+  <script>
     const fullTitle = "✦ Welcome to My_Portfolio ✦";
 
-      let index = 0;
-      let isDeleting = false;
+    let index = 0;
+    let isDeleting = false;
 
-      function typeTitle() {
-        let currentTitle = fullTitle.slice(0, index);
-        document.title = currentTitle;
+    function typeTitle() {
+      let currentTitle = fullTitle.slice(0, index);
+      document.title = currentTitle;
 
-        if (!isDeleting) {
-          if (index < fullTitle.length) {
-            index++;
-          } else {
-            isDeleting = true;
-            setTimeout(typeTitle, 2000); 
-            return;
-          }
+      if (!isDeleting) {
+        if (index < fullTitle.length) {
+          index++;
         } else {
-          if (index > 0) {
-            index--;
-          } else {
-            isDeleting = false;
-          }
+          isDeleting = true;
+          setTimeout(typeTitle, 2000);
+          return;
         }
-
-        setTimeout(typeTitle, isDeleting ? 100 : 150);
+      } else {
+        if (index > 0) {
+          index--;
+        } else {
+          isDeleting = false;
+        }
       }
 
-      window.addEventListener("DOMContentLoaded", typeTitle);
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+      setTimeout(typeTitle, isDeleting ? 100 : 150);
+    }
+
+    window.addEventListener("DOMContentLoaded", typeTitle);
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
