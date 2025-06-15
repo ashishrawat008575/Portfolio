@@ -11,6 +11,7 @@ import Footer from "../components/Footer/Footer";
   
 
 const AppRouter = () => {
+  
   return (
     <>
       {/* <LandingPage /> */}
