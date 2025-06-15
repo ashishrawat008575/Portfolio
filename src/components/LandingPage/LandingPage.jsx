@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import BgVideo from "../../assets/BgVideo/Bg.mp4";
+import BgVideo from "../../assets/BgVideo/Bgg.mp4";
 
 const LandingPage = () => {
     const [show, setShow] = useState(true);
