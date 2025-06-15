@@ -7,13 +7,13 @@ import ContactMePage from "../Page/ContactMePage";
 import ProjectPage from "../Page/ProjectPage";
 import SkillPage from "../Page/SkillPage";
 import Footer from "../components/Footer/Footer";
-import LandingPage from "../components/LandingPage/LandingPage";
+// import LandingPage from "../components/LandingPage/LandingPage";
   
 
 const AppRouter = () => {
   return (
     <>
-      <LandingPage />
+      {/* <LandingPage /> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
