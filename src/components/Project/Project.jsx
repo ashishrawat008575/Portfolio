@@ -42,14 +42,6 @@ const projects = [
     image: ShabrigardensbistroImg,
     tech: ['Framer Motion', 'React', 'Tailwind CSS', ],
   },
-  {
-    title: 'Jurisnexa Immigration Services',
-    description:
-      'A user-friendly platform showcasing immigration services, client consultations, and document management with secure payment integration.',
-    link: 'https://jurisnexaimmigrationservices.vercel.app/',
-    image: JurisnexaImg,
-    tech: ['JavaScript', 'React', 'Tailwind CSS', 'Animation'],
-  },
 ];
 
 // Animation Variants
